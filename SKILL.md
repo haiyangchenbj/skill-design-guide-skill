@@ -1,17 +1,82 @@
 ---
 name: skill-design-guide
+display_name: "Skill / Agent Architecture Guide"
 description: |
-  Design principles and quality checklist for building Skill / Agent systems.
-  Auto-loads when the user asks to design, create, review, or optimize any Skill or Agent.
-  Distilled from Anthropic / OpenAI / LangChain official engineering practices.
-  Trigger keywords: design skill, create skill, new agent, skill review, agent design,
-  design principles, skill architecture, agent architecture, optimize skill, skill quality,
-  skill checklist, agent patterns.
-version: 1.0.0
-author: Coralyx
+  🎯 WHEN TO USE: Before writing any SKILL.md code. This is the ARCHITECTURE coach, 
+  NOT a code generator.
+  
+  🆚 DIFFERENCE from skill-creator/template-skill:
+  - skill-creator = "How to WRITE code" (tool)
+  - template-skill = "COPY this template" (boilerplate)
+  - THIS GUIDE = "How to DESIGN architecture" (methodology)
+  
+  ✅ USE THIS WHEN:
+  - Starting a new skill and unsure: Workflow or Agent?
+  - Don't know which of the 5 workflow patterns to choose?
+  - Code works but architecture feels messy?
+  - Need to review a skill before production?
+  
+  📦 WHAT YOU GET:
+  - Architecture decision framework (Workflow vs Agent)
+  - 5 workflow pattern selection guide
+  - SKILL.md template with best practices
+  - 25-point quality checklist
+  - Common anti-patterns to avoid
+  - Brain/Hands/Session architecture principles
+  
+  🌐 中文版: See SKILL_zh.md for Chinese version
+  
+  Trigger keywords: design skill architecture, workflow or agent, choose workflow pattern,
+  review skill design, skill quality checklist, brain hands session, skill anti-patterns,
+  prompt chaining vs routing, when to use agent, skill structure review.
+version: "1.3.0"
+author: haiyangchen (Coralyx)
+category: "Architecture / Design Patterns"
+license: "MIT"
+homepage: https://github.com/haiyangchenbj
 ---
 
 # Skill / Agent Design Guide
+
+> **30-Second Test**: If you're about to write a SKILL.md file OR your skill "works but feels messy", load this guide.
+
+## 🆚 What Makes This Different
+
+| Tool | What It Does | When You Need It |
+|------|-------------|------------------|
+| **skill-creator** | Helps you WRITE skill code | "How do I structure this file?" |
+| **template-skill** | Gives you COPY-PASTE templates | "What's the standard format?" |
+| **THIS GUIDE** | Teaches you DESIGN decisions | "Should this be Workflow or Agent?" |
+
+**This guide answers WHY, not HOW.**
+
+## ✅ 3 Ways to Use This Guide
+
+### 1. New Skill Design (Most Common)
+**You say**: "I want to build a [X] skill"
+**I help you decide**:
+- Workflow or Agent?
+- Which of the 5 workflow patterns?
+- Brain/Hands/Session separation?
+
+**Output**: Architecture blueprint (not code)
+
+### 2. Skill Review
+**You say**: "Review my skill design" or "Check this skill's quality"
+**I do**: Run 25-point checklist
+- Structure check
+- Principle alignment  
+- Anti-pattern detection
+
+**Output**: Review report with improvement suggestions
+
+### 3. Pattern Selection
+**You say**: "Should I use Prompt Chaining or Routing?"
+**I explain**: 5 workflow patterns with decision criteria
+
+**Output**: Pattern recommendation with rationale
+
+---
 
 Load this guide as a constraint layer whenever designing any Skill or Agent. Distilled from official engineering blogs and technical docs by Anthropic, OpenAI, and LangChain.
 
@@ -28,6 +93,25 @@ This is the consensus baseline across Anthropic, OpenAI, and LangChain. Any desi
 - If a step can be done with deterministic code (scripts), don't use an LLM
 - If a fixed-step workflow can solve it, don't use a dynamic Agent
 - Ship the MVP first, iterate based on actual output quality
+
+---
+
+## Principle One: Brain / Hands / Session Separation
+
+From Anthropic's April 2026 architecture essay: well-designed Agent systems should separate three concerns:
+
+| Component | Role | In Your Skill |
+|-----------|------|---------------|
+| **Brain** | Decision logic, workflow definition | `SKILL.md` — the orchestration layer |
+| **Hands** | Deterministic execution, tool operations | `scripts/` — code that actually does things |
+| **Session** | Context, knowledge base, configuration | `references/`, `assets/`, config files |
+
+**Why this matters:**
+- Modify Skill logic without touching knowledge bases
+- Update reference materials without changing Skill code
+- Swap file directory structures without rewriting the Skill
+
+**Your skills already follow this:** `data-ai-daily-brief` (scripts=fetches data), `benjie-model` (serves as Session layer for other skills).
 
 ---
 
@@ -210,6 +294,14 @@ Run this checklist after completing every Skill design:
 - [ ] Can you trace which materials the Skill referenced?
 - [ ] Can you pinpoint which step failed when errors occur?
 
+### Production-Ready Extensions (Optional)
+
+For skills running in automation or serving multiple users:
+
+- [ ] **Quality vs Latency**: Have you traded off accuracy against response time? (More reflection steps → better quality but slower)
+- [ ] **Guardrails**: Input validation, output filtering, human checkpoints before high-risk outputs
+- [ ] **Evaluation**: End-to-end quality checks, component-level accuracy tests, continuous monitoring
+
 ---
 
 ## Anti-Patterns (Must Avoid)
@@ -227,6 +319,32 @@ Run this checklist after completing every Skill design:
 
 ---
 
+## Platform Compatibility
+
+This guide applies to any Skill/Agent platform:
+
+| Platform | Skill Manifest | Scripts Directory | Notes |
+|----------|---------------|-------------------|-------|
+| **ClawHub** | `SKILL.md` | `scripts/` | Native support |
+| **OpenAI GPTs** | Instructions + Functions | Code Interpreter | Map concepts to GPT architecture |
+| **Anthropic Claude** | System Prompt + Tools | External functions | Brain=system prompt, Hands=tools |
+| **LangChain** | Chain definition | Runnable lambdas | Patterns map to LCEL |
+| **Custom Agents** | Agent config | Tool implementations | Architecture principles universal |
+
+**Key insight**: Brain/Hands/Session separation is platform-agnostic. Adapt the file structure to your platform's conventions.
+
+---
+
+## Credits & References
+
+This guide distills official engineering practices from:
+
+- **Anthropic**: "Building Effective Agents" (Dec 2024), "Brain, Hands, and Session" (Apr 2026)
+- **OpenAI**: Function Calling Best Practices, Agent SDK guidelines
+- **LangChain**: "State of AI Agents" report, LCEL documentation
+
+---
+
 ## Deep Dive References
 
 When you need more detailed design guidance, load these on demand:
@@ -238,4 +356,10 @@ When you need more detailed design guidance, load these on demand:
 
 ---
 
-*v1.0.0 | Based on Anthropic/OpenAI/LangChain engineering practices | 2026-04-14*
+*v1.3.0 | Based on Anthropic/OpenAI/LangChain engineering practices | 2026-04-15*
+
+**Changelog:**
+- v1.3.0: Added usage scenarios, created Chinese version (SKILL_zh.md), optimized value communication
+- v1.2.0: Platform-agnostic rewrite, added Credits, enhanced keywords for architecture focus
+- v1.1.0: Added Principle One (Brain/Hands/Session separation) and Production-Ready extensions
+- v1.0.0: Initial release
