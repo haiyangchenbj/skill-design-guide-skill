@@ -1,39 +1,26 @@
 ---
 name: skill-design-guide
-display_name: "Skill / Agent Architecture Guide"
-description: |
-  🎯 WHEN TO USE: Before writing any SKILL.md code. This is the ARCHITECTURE coach, 
-  NOT a code generator.
-  
-  🆚 DIFFERENCE from skill-creator/template-skill:
-  - skill-creator = "How to WRITE code" (tool)
-  - template-skill = "COPY this template" (boilerplate)
-  - THIS GUIDE = "How to DESIGN architecture" (methodology)
-  
-  ✅ USE THIS WHEN:
-  - Starting a new skill and unsure: Workflow or Agent?
-  - Don't know which of the 5 workflow patterns to choose?
-  - Code works but architecture feels messy?
-  - Need to review a skill before production?
-  
-  📦 WHAT YOU GET:
-  - Architecture decision framework (Workflow vs Agent)
-  - 5 workflow pattern selection guide
-  - SKILL.md template with best practices
-  - 25-point quality checklist
-  - Common anti-patterns to avoid
-  - Brain/Hands/Session architecture principles
-  
-  🌐 中文版: See SKILL_zh.md for Chinese version
-  
-  Trigger keywords: design skill architecture, workflow or agent, choose workflow pattern,
-  review skill design, skill quality checklist, brain hands session, skill anti-patterns,
-  prompt chaining vs routing, when to use agent, skill structure review.
-version: "1.3.0"
+display_name: "Skill Design Guide"
+description: >
+  Design better AI skills with proven architecture patterns. Helps you decide
+  Workflow vs Agent, pick the right pattern (Prompt Chaining, Routing,
+  Parallelization, Orchestrator-Workers, Evaluator-Optimizer), write clean
+  SKILL.md files, and catch common mistakes with a 25-point quality checklist.
+  Based on design principles from Anthropic, OpenAI, and LangChain.
+  Chinese version included (SKILL_zh.md).
+version: "1.3.1"
 author: haiyangchen (Coralyx)
 category: "Architecture / Design Patterns"
 license: "MIT"
-homepage: https://github.com/haiyangchenbj
+homepage: https://github.com/haiyangchenbj/skill-design-guide-skill
+read_when:
+  - Starting a new skill and unsure whether to use Workflow or Agent
+  - Don't know which of the 5 workflow patterns to choose
+  - Code works but architecture feels messy
+  - Need to review a skill before production
+  - "design skill architecture, workflow or agent, choose workflow pattern"
+  - "review skill design, skill quality checklist, brain hands session"
+  - "skill anti-patterns, prompt chaining vs routing, when to use agent"
 ---
 
 # Skill / Agent Design Guide
