@@ -1,45 +1,34 @@
 ---
-name: skill-design-guide-zh
-display_name: "Skill / Agent 架构设计指南"
-description: |
-  🎯 使用时机：在写任何 SKILL.md 代码之前。这是架构设计的"教练"，不是代码生成器。
-  
-  🆚 与 skill-creator、template-skill 的区别：
-  - skill-creator = "怎么写代码"（工具）
-  - template-skill = "复制这个模板"（样板）
-  - 本指南 = "怎么设计架构"（方法论）
-  
-  ✅ 什么时候用：
-  - 新建 skill，不确定用 Workflow 还是 Agent？
-  - 不知道选 5 种工作流模式中的哪一种？
-  - 代码能跑，但架构感觉乱？
-  - 上线前需要审查 skill 质量？
-  
-  📦 你能得到：
-  - 架构决策框架（Workflow vs Agent）
-  - 5 种工作流模式选择指南
-  - 带最佳实践的 SKILL.md 模板
-  - 25 项质量检查清单
-  - 常见反模式警示
-  - Brain/Hands/Session 架构原则
-  
-  🌐 English Version: See SKILL.md for English version
-  
-  触发关键词: 设计skill架构, workflow还是agent, 选工作流模式, 
-             审查skill设计, skill质量检查, brain hands session, 
-             skill反模式, prompt chaining vs routing, 什么时候用agent
-version: "1.3.0"
+name: skill-design-guide
+display_name: "Skill 设计指南"
+description: >
+  用经过验证的架构模式设计更好的 AI Skill。帮你判断该用 Workflow 还是 Agent，
+  从 5 种工作流模式中选出最合适的，用 25 项检查清单审查质量，避开常见反模式。
+  基于 Anthropic、OpenAI、LangChain 的设计原则。中文版，英文版见 SKILL.md。
+version: "1.3.2"
 author: haiyangchen (Coralyx)
-category: "架构 / 设计模式"
+category: "Architecture / Design Patterns"
 license: "MIT"
-homepage: https://github.com/haiyangchenbj
+homepage: https://github.com/haiyangchenbj/skill-design-guide-skill
+read_when:
+  - 设计skill架构
+  - workflow还是agent
+  - 选工作流模式
+  - 审查skill设计
+  - skill质量检查
+  - brain hands session
+  - skill反模式
+  - prompt chaining vs routing
+  - 什么时候用agent
+  - 创建新skill
+  - 优化现有skill
 ---
 
 # Skill / Agent 架构设计指南
 
 > **30秒判断**：如果你正要写 SKILL.md 文件，或者觉得 skill "能跑但架构乱"，加载本指南。
 
-## 🆚 有什么不同
+## 有什么不同
 
 | 工具 | 做什么 | 什么时候用 |
 |------|--------|-----------|
@@ -49,7 +38,7 @@ homepage: https://github.com/haiyangchenbj
 
 **本指南回答的是 WHY（为什么），不是 HOW（怎么做）。**
 
-## ✅ 3 种使用方式
+## 3 种使用方式
 
 ### 1. 新建 Skill 设计（最常用）
 **你说**："我想做一个 [X] skill"

@@ -8,7 +8,7 @@ description: >
   SKILL.md files, and catch common mistakes with a 25-point quality checklist.
   Based on design principles from Anthropic, OpenAI, and LangChain.
   Chinese version included (SKILL_zh.md).
-version: "1.3.1"
+version: "1.3.2"
 author: haiyangchen (Coralyx)
 category: "Architecture / Design Patterns"
 license: "MIT"
