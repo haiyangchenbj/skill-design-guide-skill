@@ -34,7 +34,7 @@ read_when:
 | **skill-creator** | 怎么写 SKILL.md 文件 |
 | **本指南** | 为什么这样设计——Workflow 还是 Agent，选哪个模式 |
 
-本指南回答的是 **WHY（为什么）**。行业研究背景见 `reference/agent-design-research.md`。
+本指南回答的是 **WHY（为什么）**。行业研究背景见 `references/agent-design-research.md`。
 
 ## 3 种使用方式
 
@@ -218,16 +218,17 @@ read_when:
 | 25 项检查清单 | `references/quality-checklist.md` |
 | 模式详解 | `references/pattern-details.md` |
 | 平台配置 | `references/platform-compatibility.md` |
-| 行业研究背景 | `reference/agent-design-research.md` |
-| Anthropic 工具设计 | `reference/anthropic-tool-design.md` |
+| 行业研究背景 | `references/agent-design-research.md` |
+| Anthropic 工具设计 | `references/anthropic-tool-design.md` |
 
 ---
 
-*v1.4.0 | Based on Anthropic/OpenAI/LangChain design principles | 2026-06-06*
+*v1.4.3 | Based on Anthropic/OpenAI/LangChain design principles | 2026-06-23*
 
 **更新日志：**
+- v1.4.3：恢复显示名称 "Skill Design Guide"
+- v1.4.2：合并 `reference/` 与 `references/` 为单一 `references/` 目录；修正所有引用路径
+- v1.4.1：修正显示名称
 - v1.4.0：重构为渐进式加载——检查清单/模式/平台表拆分到 `references/`；新增 Hard Rules + Failure Handling；SKILL_zh.md 从 9.3K 精简到 ~4.5K
 - v1.3.0：添加使用场景，中英文双版本
 - v1.2.0：平台无关化重写，添加 Credits
-- v1.1.0：添加 Brain/Hands/Session 分离原则和生产级扩展
-- v1.0.0：初始版本

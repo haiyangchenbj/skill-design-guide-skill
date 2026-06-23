@@ -7,7 +7,7 @@ description: >
   Parallelization, Orchestrator-Workers, Evaluator-Optimizer), write clean
   SKILL.md files, and catch common mistakes with a 25-point quality checklist.
   Based on design principles from Anthropic, OpenAI, and LangChain.
-version: "1.4.0"
+version: "1.4.3"
 agent_created: true
 category: "Architecture / Design Patterns"
 license: "MIT"
@@ -32,7 +32,7 @@ read_when:
 | **skill-creator** | HOW to structure a SKILL.md file |
 | **THIS GUIDE** | WHY behind design decisions — Workflow vs Agent, which pattern |
 
-This guide answers **WHY**, not HOW. See `reference/agent-design-research.md` for full industry research background.
+This guide answers **WHY**, not HOW. See `references/agent-design-research.md` for full industry research background.
 
 ## ✅ 3 Usage Modes
 
@@ -224,17 +224,18 @@ When the skill is ready to share on ClawHub/GitHub, use **`skill-publish`** to a
 | 25-point checklist | `references/quality-checklist.md` |
 | Pattern deep dive | `references/pattern-details.md` |
 | Platform-specific config | `references/platform-compatibility.md` |
-| Industry research background | `reference/agent-design-research.md` |
-| Anthropic tool design | `reference/anthropic-tool-design.md` |
+| Industry research background | `references/agent-design-research.md` |
+| Anthropic tool design | `references/anthropic-tool-design.md` |
 | Publishing to ClawHub/GitHub | Use `skill-publish` (separate skill) |
 
 ---
 
-*v1.4.0 | Based on Anthropic/OpenAI/LangChain design principles | 2026-06-06*
+*v1.4.3 | Based on Anthropic/OpenAI/LangChain design principles | 2026-06-23*
 
 **Changelog:**
+- v1.4.3: Restored display name "Skill Design Guide"
+- v1.4.2: Consolidated `reference/` + `references/` into a single `references/` dir; fixed all reference paths
+- v1.4.1: Fixed display name
 - v1.4.0: Refactored for progressive disclosure — split checklist/patterns/platform into `references/`; added Hard Rules + Failure Handling; reduced SKILL.md from 13K to ~5K chars
 - v1.3.0: Added usage scenarios, Chinese version (SKILL_zh.md)
 - v1.2.0: Platform-agnostic rewrite, added Credits
-- v1.1.0: Added Principle One (Brain/Hands/Session) and production extensions
-- v1.0.0: Initial release
