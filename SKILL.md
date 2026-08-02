@@ -7,7 +7,7 @@ description: >
   Parallelization, Orchestrator-Workers, Evaluator-Optimizer), write clean
   SKILL.md files, and catch common mistakes with a governance-aware quality checklist.
   Based on design principles from Anthropic, OpenAI, and LangChain.
-version: "1.4.5"
+version: "1.4.6"
 agent_created: true
 category: "Architecture / Design Patterns"
 license: "MIT"
@@ -242,9 +242,10 @@ When the skill is ready to share on ClawHub/GitHub, use **`skill-publish`** to a
 
 ---
 
-*v1.4.5 | Based on Anthropic/OpenAI/LangChain design principles | 2026-08-02*
+*v1.4.6 | Based on Anthropic/OpenAI/LangChain design principles | 2026-08-02*
 
 **Changelog:**
+- v1.4.6: Published merged content to the correct slug `skill-design-guide-skill` — restores 9 `metadata.openclaw.tags` (discoverability) + 1.4.4 governance-aware checklist / Governance & Continuity checks. (Prior 1.4.5/1.4.6 attempts landed on a stray `skill-design-guide` slug by mistake; that duplicate should be deleted.)
 - v1.4.5: Restored `metadata.openclaw.tags` (9 discoverability tags) dropped in the 1.4.4 sync; no content change beyond 1.4.4 governance additions
 - v1.4.4: Added governance checks for single source of truth, private-data separation, secret scanning, retry/re-run, external-action gates, and persistent task continuity
 - v1.4.3: Restored display name "Skill Design Guide"
