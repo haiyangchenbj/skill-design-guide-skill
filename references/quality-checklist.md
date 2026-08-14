@@ -1,4 +1,3 @@
-# Skill Quality Checklist
 
 > Load this when reviewing a skill or doing final checks before production.
 
