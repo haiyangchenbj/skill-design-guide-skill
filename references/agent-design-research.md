@@ -1,4 +1,3 @@
-# How to Build a Good Skill / Agent: Industry Design Principles Research
 
 > Research date: 2026-04-14
 > Sources: Anthropic / OpenAI / Google / LangChain official docs and engineering blogs
