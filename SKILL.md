@@ -1,5 +1,5 @@
 ---
-slug: skill-design-guide
+slug: skill-design-guide-skill
 displayName: Skill Design Guide
 name: skill-design-guide
 display_name: "Skill Design Guide"
@@ -9,7 +9,7 @@ description: >
   Parallelization, Orchestrator-Workers, Evaluator-Optimizer), write clean
   SKILL.md files, and catch common mistakes with a governance-aware quality checklist.
   Based on design principles from Anthropic, OpenAI, and LangChain.
-version: "1.4.8"
+version: "1.4.9"
 agent_created: true
 category: "Architecture / Design Patterns"
 license: "MIT"
